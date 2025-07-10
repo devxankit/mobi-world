@@ -40,7 +40,7 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-    <section className="relative w-full min-h-[60vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden rounded-2xl max-w-7xl mx-auto mt-6 mb-12 shadow-lg">
+    <section className="relative w-full min-h-[50vh] sm:min-h-[60vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden rounded-2xl max-w-7xl mx-auto mt-6 mb-12 shadow-lg">
       <Swiper
         modules={[Autoplay, Navigation, Pagination, EffectFade, A11y]}
         effect="fade"
@@ -66,17 +66,17 @@ const HeroSlider = () => {
               }}
               aria-hidden="true"
             />
-            <div className="relative z-10 flex flex-col items-center justify-center h-[60vh] md:h-[80vh] px-4">
+            <div className="relative z-10 flex flex-col items-center justify-center h-[50vh] sm:h-[60vh] md:h-[80vh] px-4 sm:px-6 md:px-8">
               <div className="text-center animate-fadeInUp">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg transition-all duration-700 opacity-0 animate-fadeInUp">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg transition-all duration-700 opacity-0 animate-fadeInUp">
                   {slide.headline}
                 </h1>
-                <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-md transition-all duration-700 delay-200 opacity-0 animate-fadeInUp">
+                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white mb-6 sm:mb-8 drop-shadow-md transition-all duration-700 delay-200 opacity-0 animate-fadeInUp max-w-2xl mx-auto">
                   {slide.subheadline}
                 </p>
                 <Link
                   to={slide.buttonLink}
-                  className="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:text-white transition-colors text-lg md:text-xl animate-bounce"
+                  className="inline-block bg-white text-blue-700 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-700 hover:text-white transition-colors text-sm sm:text-base md:text-lg lg:text-xl animate-bounce"
                   tabIndex={0}
                   aria-label={slide.buttonText}
                 >

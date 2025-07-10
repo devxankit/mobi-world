@@ -3,7 +3,7 @@ import axios from "axios";
 import PhoneCard from "./PhoneCard";
 import PromoBanner from "./PromoBanner";
 
-const API_URL = "https://mobi-world-be.onrender.com/api/phones";
+const API_URL = "https://mobilworld-backend.onrender.com/api/phones";
 const JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODY2NTU2ODdhMzc3NjBiYzUxNTI2ZWUiLCJpYXQiOjE3NTE1MzcwMDIsImV4cCI6MTc1MjE0MTgwMn0.wuHDx3aTTfuXZSrSBg29jrDpYQhz1X2bqzg7k7X_gkM";
 
 const promoBanners = [
@@ -30,9 +30,8 @@ const PhoneList = () => {
   const fetchPhones = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(API_URL, {
+      const res = await axios.get(`${API_URL}?token=${JWT_TOKEN}`, {
         headers: {
-          'Authorization': `Bearer ${JWT_TOKEN}`,
           'Content-Type': 'application/json'
         }
       });
@@ -45,6 +44,13 @@ const PhoneList = () => {
         setError("API returned unsuccessful response");
       }
     } catch (err) {
+      console.error("API fetch error:", err);
+      if (err.response) {
+        // Log details if the backend responded with an error (e.g., 401 Unauthorized)
+        console.error("Error response data:", err.response.data);
+        console.error("Error response status:", err.response.status);
+        console.error("Error response headers:", err.response.headers);
+      }
       setError("Failed to fetch phones. Please try again later.");
     } finally {
       setLoading(false);
@@ -103,7 +109,7 @@ const PhoneList = () => {
           Showing {phones.length} phones (Page {pagination.currentPage} of {pagination.totalPages}, Total: {pagination.totalItems})
         </div>
       )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
         {gridItems}
       </div>
     </div>

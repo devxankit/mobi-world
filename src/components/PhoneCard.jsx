@@ -14,7 +14,7 @@ const PhoneCard = ({ phone }) => {
 
   const imageUrl =
     images && images.length > 0 && images[0].filename
-      ? `https://mobi-world-be.onrender.com/uploads/${images[0].filename}`
+      ? `https://mobilworld-backend.onrender.com/uploads/${images[0].filename}`
       : null;
 
   const handleWhatsApp = () => {
@@ -53,8 +53,8 @@ const PhoneCard = ({ phone }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg transition-colors">
-      <div className="relative w-full h-48 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-t-xl overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg transition-colors w-full min-w-0">
+      <div className="relative w-full h-40 sm:h-48 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-t-xl overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}
@@ -72,7 +72,7 @@ const PhoneCard = ({ phone }) => {
           {status === 'in_stock' ? 'In Stock' : 'Out of Stock'}
         </span>
       </div>
-      <div className="flex flex-col flex-1 p-4">
+      <div className="flex flex-col flex-1 p-3 sm:p-4">
         <div className="font-bold text-lg text-gray-800 dark:text-gray-100 mb-1 truncate">{modelNo}</div>
         <div className="mb-2">
           <span className="inline-block bg-gradient-to-r from-indigo-400 to-purple-500 text-white text-base font-semibold px-4 py-1 rounded-full">
