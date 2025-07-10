@@ -3,8 +3,7 @@ import axios from "axios";
 import PhoneCard from "./PhoneCard";
 import PromoBanner from "./PromoBanner";
 
-const API_URL = "https://mobilworld-backend.onrender.com/api/phones";
-const JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODY2NTU2ODdhMzc3NjBiYzUxNTI2ZWUiLCJpYXQiOjE3NTE1MzcwMDIsImV4cCI6MTc1MjE0MTgwMn0.wuHDx3aTTfuXZSrSBg29jrDpYQhz1X2bqzg7k7X_gkM";
+const API_URL = "http://localhost:5000/api/phones";
 
 const promoBanners = [
   {
@@ -30,7 +29,7 @@ const PhoneList = () => {
   const fetchPhones = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${API_URL}?token=${JWT_TOKEN}`, {
+      const res = await axios.get(API_URL, {
         headers: {
           'Content-Type': 'application/json'
         }
