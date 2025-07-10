@@ -83,9 +83,9 @@ const PhoneCard = ({ phone }) => {
         <div className="text-xs text-gray-500 dark:text-gray-300 mb-2 sm:mb-4">Added: {formatDate(createdAt)}</div>
         <button
           onClick={handleWhatsApp}
-          className="mt-auto flex items-center justify-center gap-1 w-full py-1 rounded-md bg-gradient-to-r from-green-400 to-green-600 text-white font-medium text-xs shadow hover:from-green-500 hover:to-green-700 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 dark:from-green-600 dark:to-green-800"
+          className="mt-auto flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold text-sm shadow hover:from-green-500 hover:to-green-700 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 dark:from-green-600 dark:to-green-800"
         >
-          <FaWhatsapp className="text-sm" />
+          <FaWhatsapp className="text-base" />
           Contact on WhatsApp
         </button>
       </div>
