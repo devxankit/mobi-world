@@ -3,7 +3,7 @@ import axios from "axios";
 import PhoneCard from "./PhoneCard";
 import PromoBanner from "./PromoBanner";
 
-const API_URL = "http://localhost:5000/api/phones";
+const API_URL = "https://mobilworld-backend.onrender.com/api/phones";
 
 const promoBanners = [
   {

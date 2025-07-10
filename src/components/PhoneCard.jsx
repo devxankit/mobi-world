@@ -14,7 +14,7 @@ const PhoneCard = ({ phone }) => {
 
   const imageUrl =
     images && images.length > 0 && images[0].filename
-      ? `http://localhost:5000/uploads/${images[0].filename}`
+      ? `https://mobilworld-backend.onrender.com/uploads/${images[0].filename}`
       : null;
 
   const handleWhatsApp = () => {
