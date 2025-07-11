@@ -13,8 +13,8 @@ const PhoneCard = ({ phone }) => {
   } = phone;
 
   const imageUrl =
-    images && images.length > 0 && images[0].filename
-      ? `https://mobilworld-backend.onrender.com/uploads/${images[0].filename}`
+    images && images.length > 0
+      ? images[0].url || (images[0].filename ? `https://mobilworld-backend.onrender.com/uploads/${images[0].filename}` : null)
       : null;
 
   const handleWhatsApp = () => {
